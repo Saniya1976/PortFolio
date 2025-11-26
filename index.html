@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SANIYA - UI/UX Designer & Frontend Developer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">SANIYA</div>
+            <div class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#hero">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+       
+    </nav>
+
+    <!-- Animated Background Gradients -->
+    <div class="gradient-bg"></div>
+    <div class="gradient-blob blob-1"></div>
+    <div class="gradient-blob blob-2"></div>
+    <div class="gradient-blob blob-3"></div>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">
+                <span class="gradient-text">Crafting</span>
+                <span class="gradient-text">Digital</span>
+                <span class="gradient-text">Experiences</span>
+            </h1>
+            <p class="hero-subtitle">UI/UX Designer & Frontend Developer</p>
+            <p class="hero-description">I design beautiful interfaces and build elegant solutions that users love.</p>
+            <button class="cta-button" onclick="document.getElementById('projects').scrollIntoView({ behavior: 'smooth' })">
+  Explore My Work
+</button>
+
+        </div>
+        <div class="hero-glow"></div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="section-container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text glass-panel">
+                    <p>I'm a Full Stack Developer with hands-on experience building real-world projects across frontend, backend, and product workflows. I focus on creating clean, scalable systems and intuitive user experiences. Most of what I’ve learned comes from building, breaking, and improving things, which keeps me curious about UI/UX and how design decisions shape the final product.</p>
+                    <p>My approach combines strategic thinking with creative execution, ensuring every pixel serves a purpose and every interaction delights the user.</p>
+                </div>
+                <div class="stats-grid">
+                    <div class="stat-card glass-panel">
+                        <div class="stat-number">7+</div>
+                        <div class="stat-label">Projects Completed</div>
+                    </div>
+                    
+                    <div class="stat-card glass-panel">
+                        <div class="stat-number">1+</div>
+                        <div class="stat-label">Years Experience</div>
+                    </div>
+                    <div class="stat-card glass-panel">
+                        <div class="stat-number">1</div>
+                        <div class="stat-label">Awards Won</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="section-container">
+            <h2 class="section-title">Skills & Expertise</h2>
+            <div class="skills-grid">
+                <div class="skill-card glass-panel">
+                    <div class="skill-icon">🎨</div>
+                    <h3>UI/UX Design</h3>
+                    <p>Figma, Adobe XD, Prototyping, User Research, Wireframing</p>
+                </div>
+                <div class="skill-card glass-panel">
+                    <div class="skill-icon">💻</div>
+                    <h3>Frontend Dev</h3>
+                    <p>React, Next.js, TypeScript, Tailwind CSS, Web Animation</p>
+                </div>
+                <div class="skill-card glass-panel">
+                    <div class="skill-icon">✨</div>
+                    <h3>Motion Design</h3>
+                    <p>CSS Animation, Framer, GSAP, Micro-interactions</p>
+                </div>
+                <div class="skill-card glass-panel">
+                    <div class="skill-icon">🎯</div>
+                    <h3>Strategy</h3>
+                    <p>User Testing, Analytics, Performance, Accessibility</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+   <section id="projects" class="projects">
+    <div class="section-container">
+        <h2 class="section-title">Featured Projects</h2>
+
+        <div class="projects-grid">
+
+            <!-- YapChat -->
+            <div class="project-card glass-panel">
+                <div class="project-image">
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #00e1ff 0%, #0077ff 100%);">
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>YapChat</h3>
+                    <p>Designed a clean and minimal chat interface with responsive layout, message states, and a modern color system.</p>
+
+                    <div class="project-tags">
+                        <span class="tag">Full Stack</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Socket.io</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://yapchat1.vercel.app" class="project-link" target="_blank">Live Demo →</a>
+                        <a href="https://github.com/Saniya1976/YapChat" class="project-link" target="_blank">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Nestly -->
+            <div class="project-card glass-panel">
+                <div class="project-image">
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #00ffb2 0%, #009970 100%);">
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Nestly</h3>
+                    <p>Designed a sleek component-based UI using shadcn/ui with reusable cards, posts, and profile sections.</p>
+
+                    <div class="project-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">Shadcn/ui</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://nestly-v7t2.vercel.app" class="project-link" target="_blank">Live Demo →</a>
+                        <a href="https://github.com/Saniya1976/nestly" class="project-link" target="_blank">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hack-Mystra -->
+            <div class="project-card glass-panel">
+                <div class="project-image">
+                    <div class="placeholder-image"
+                        style="background: linear-gradient(135deg, #3f5efb 0%, #fc466b 100%);">
+                    </div>
+                </div>
+                <div class="project-content">
+                    <h3>Hack-Mystra</h3>
+                    <p>Built the frontend Home, Sign-in/Sign-up, and Courses UI with smooth animation patterns and clean layout structure.</p>
+
+                    <div class="project-tags">
+                        <span class="tag">Frontend</span>
+                        <span class="tag">React</span>
+                        <span class="tag">Animations</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://hack-mystra.vercel.app" class="project-link" target="_blank">Live Demo →</a>
+                        <a href="#" class="project-link" target="_blank">GitHub →</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="section-container">
+            <h2 class="section-title">Let's Work Together</h2>
+            <div class="contact-content">
+                <p class="contact-text">I'm always interested in hearing about new projects and opportunities.</p>
+                <div class="contact-links">
+                    <a href="mailto:hello@saniya.com" class="contact-link glass-panel">
+                        <span class="link-icon">✉</span>
+                        <span>Email Me</span>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="contact-link glass-panel">
+                        <span class="link-icon">💻</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://linkedin.com" target="_blank" class="contact-link glass-panel">
+                        <span class="link-icon">🔗</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://twitter.com" target="_blank" class="contact-link glass-panel">
+                        <span class="link-icon">𝕏</span>
+                        <span>Twitter</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2025 SANIYA. Crafted with care.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
