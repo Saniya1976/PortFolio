@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { Github, Linkedin, ArrowUp, Zap } from "lucide-react";
+import { Github, Linkedin, ArrowUp } from "lucide-react";
 
 export const Footer = () => {
     return (

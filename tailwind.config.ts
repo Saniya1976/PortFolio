@@ -9,12 +9,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        background: "hsl(var(--background))",
+        foreground: "hsl(var(--foreground))",
         accent: {
-          primary: "var(--accent-primary)",
-          secondary: "var(--accent-secondary)",
-          tertiary: "var(--accent-tertiary)",
+          primary: "hsl(var(--accent-burgundy))",
+          secondary: "hsl(var(--accent-rose))",
+          burgundy: "hsl(var(--accent-burgundy))",
+          rose: "hsl(var(--accent-rose))",
         },
       },
       animation: {

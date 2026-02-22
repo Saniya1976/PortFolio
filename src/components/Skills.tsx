@@ -2,104 +2,154 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { cn } from "@/lib/utils";
-import { Cpu, Globe, Database, Cog, ShieldCheck, Zap } from "lucide-react";
+import { Cpu, Globe, Database, Cog } from "lucide-react";
 
 const skillCategories = [
     {
-        title: "Frontend",
-        icon: <Cpu size={24} />,
-        skills: ["React.js", "Next.js 14", "TypeScript", "Tailwind CSS", "Redux Toolkit", "Framer Motion"],
-        shade: "bg-[#1a0f14]",
-        accent: "text-[#be185d]",
-        level: "Expert"
+        title: "FRONTEND",
+        icon: <Cpu size={18} />,
+        skills: ["React.js", "Next.js", "TypeScript", "JavaScript", "HTML5", "CSS3", "Tailwind CSS", "shadcn/ui", "Context API"],
+        color: "from-[#8e1c2a] to-[#be185d]"
     },
     {
-        title: "Backend",
-        icon: <Globe size={24} />,
-        skills: ["Node.js", "Express.js", "C++", "Python", "REST APIs", "Socket.io"],
-        shade: "bg-[#0f0a0d]",
-        accent: "text-[#be185d]",
-        level: "Proficient"
+        title: "BACKEND",
+        icon: <Globe size={18} />,
+        skills: ["Node.js", "Express.js", "RESTful APIs", "JWT Auth", "Streamify", "Socket.io"],
+        color: "from-[#6d0f1b] to-[#8e1c2a]"
     },
     {
-        title: "Database",
-        icon: <Database size={24} />,
-        skills: ["PostgreSQL", "MongoDB", "Prisma ORM", "Redis", "Mongoose", "AWS S3"],
-        shade: "bg-[#1a0f14]",
-        accent: "text-[#be185d]",
-        level: "Proficient"
+        title: "DATABASE",
+        icon: <Database size={18} />,
+        skills: ["MongoDB", "MySQL", "PostgreSQL", "Prisma ORM", "Mongoose"],
+        color: "from-[#8e1c2a] to-[#c12a4f]"
     },
     {
-        title: "Tools & DevOps",
-        icon: <Cog size={24} />,
-        skills: ["Clerk Auth", "Docker", "Git/GitHub", "Vercel", "Postman", "CI/CD"],
-        shade: "bg-[#0f0a0d]",
-        accent: "text-[#be185d]",
-        level: "Production Ready"
+        title: "CLOUD & TOOLS",
+        icon: <Cog size={18} />,
+        skills: ["Git", "GitHub", "Vercel", "Render", "Cloudinary", "Postman", "Clerk"],
+        color: "from-[#c12a4f] to-[#e14d85]"
+    },
+    {
+        title: "LANGUAGES",
+        icon: <Globe size={18} />,
+        skills: ["JavaScript", "TypeScript", "C++", "Python", "C"],
+        color: "from-[#8e1c2a] to-[#fda4af]"
     },
 ];
 
 export const Skills = () => {
     return (
-        <section id="skills" className="py-24 bg-[#0f0a0d] relative overflow-hidden">
-
-            {/* Visual Identity */}
-            <div className="absolute top-[30%] right-[-5%] w-[500px] h-[500px] bg-[#6d0f1b]/5 rounded-full blur-[100px] pointer-events-none" />
+        <section id="skills" className="py-24 bg-[#0d0406] relative overflow-hidden bg-grid">
+            {/* Ambient Background Elements */}
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#8e1c2a]/5 rounded-full blur-[150px] pointer-events-none" />
+            <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-[#4a0404]/5 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="container mx-auto px-8 relative z-10">
-
-                {/* Section Header */}
-                <div className="max-w-4xl mx-auto mb-20 text-center">
-                    <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#fda4af] mb-4 block">Capabilities</span>
-                    <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter font-outfit uppercase">Technical <span className="text-gradient-rose">Stack.</span></h2>
+                {/* Header with bold gradient */}
+                <div className="mb-20">
+                    <motion.h2
+                        initial={{ opacity: 0, x: -20 }}
+                        whileInView={{ opacity: 1, x: 0 }}
+                        viewport={{ once: true }}
+                        className="text-5xl md:text-7xl font-black tracking-tighter font-outfit uppercase"
+                    >
+                        <span className="text-white">SKILL </span>
+                        <span className="text-gradient-rose">STACK.</span>
+                    </motion.h2>
+                    <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: "100px" }}
+                        viewport={{ once: true }}
+                        className="h-1 bg-gradient-to-r from-[#8e1c2a] to-transparent mt-4"
+                    />
                 </div>
-                <p className="text-xs font-bold uppercase tracking-[0.3em] text-[#9ca3af] leading-loose max-w-[280px] border-l border-[#fda4af]/20 pl-8 mx-auto text-center hidden">
-                    An extensive arsenal of industrial development tools, frameworks, and deployment architectures.
-                </p>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                {/* Vertical Oriented Glassmorphism Cards */}
+                <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-5 gap-6">
                     {skillCategories.map((cat, idx) => (
                         <motion.div
                             key={cat.title}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 0, y: 30 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: idx * 0.1, duration: 0.6 }}
-                            className={cn(
-                                "group p-8 rounded-3xl border border-white/5 transition-all duration-700 relative overflow-hidden flex flex-col h-full bg-[#1a0f14]",
-                                "hover:border-[#fda4af]/30 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)]"
-                            )}
+                            transition={{ duration: 0.8, delay: idx * 0.1 }}
+                            whileHover={{ y: -10 }}
+                            className="relative group h-full"
                         >
-                            <div className="mb-6">
-                                <div className={cn("w-10 h-10 rounded-xl bg-white/[0.03] border border-white/5 flex items-center justify-center mb-6 text-[#fda4af]")}>
-                                    {React.cloneElement(cat.icon as React.ReactElement, { size: 18 })}
-                                </div>
-                                <h3 className="text-xl font-black text-white tracking-tighter mb-1 uppercase font-outfit">{cat.title}</h3>
-                                <div className="flex items-center gap-2">
-                                    <Zap size={10} className="text-[#fda4af]" />
-                                    <span className="text-[8px] font-black uppercase tracking-widest text-white/40">{cat.level}</span>
-                                </div>
-                            </div>
+                            {/* Glowing Background/Border Effect */}
+                            <div className="absolute -inset-[1px] bg-gradient-to-b from-[#8e1c2a]/50 via-transparent to-[#fda4af]/30 rounded-[2rem] opacity-50 group-hover:opacity-100 transition-opacity duration-500 blur-[1px]" />
 
-                            <div className="flex flex-wrap gap-2 relative z-10 flex-grow">
-                                {cat.skills.map((skill, sIdx) => (
-                                    <motion.span
-                                        key={skill}
-                                        initial={{ opacity: 0, scale: 0.8 }}
-                                        whileInView={{ opacity: 1, scale: 1 }}
-                                        transition={{ delay: (idx * 0.1) + (sIdx * 0.03) }}
-                                        className="inline-flex items-center px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/5 text-[9px] font-extrabold uppercase tracking-widest text-[#9ca3af] group-hover:text-white group-hover:bg-[#fda4af]/10 group-hover:border-[#fda4af]/20 transition-all cursor-default"
-                                    >
-                                        {skill}
-                                    </motion.span>
-                                ))}
+                            <div className="relative h-full p-8 rounded-[2rem] bg-[#1a080a]/40 backdrop-blur-xl border border-white/5 overflow-hidden flex flex-col">
+                                {/* Header */}
+                                <div className="flex items-center gap-4 mb-8">
+                                    <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${cat.color} p-px`}>
+                                        <div className="w-full h-full rounded-2xl bg-[#0d0406] flex items-center justify-center text-white">
+                                            {cat.icon}
+                                        </div>
+                                    </div>
+                                    <h3 className="text-sm font-black text-white/90 tracking-widest font-outfit">{cat.title}</h3>
+                                </div>
+
+                                {/* Skills Grid - Consistent Button Boxes */}
+                                <div className="grid grid-cols-1 gap-2 flex-grow">
+                                    {cat.skills.map((skill, sIdx) => (
+                                        <motion.div
+                                            key={skill}
+                                            initial={{ opacity: 0, x: -10 }}
+                                            whileInView={{ opacity: 1, x: 0 }}
+                                            animate={{
+                                                boxShadow: [
+                                                    "0 0 0px rgba(142, 28, 42, 0)",
+                                                    "0 0 10px rgba(142, 28, 42, 0.1)",
+                                                    "0 0 0px rgba(142, 28, 42, 0)"
+                                                ]
+                                            }}
+                                            transition={{
+                                                default: { delay: 0.1 + (sIdx * 0.03) },
+                                                boxShadow: {
+                                                    duration: 3,
+                                                    repeat: Infinity,
+                                                    delay: Math.random() * 10
+                                                }
+                                            }}
+                                            whileHover={{ scale: 1.02 }}
+                                            className="px-4 py-2.5 rounded-xl bg-[#8e1c2a]/10 border border-[#8e1c2a]/20 hover:border-[#fda4af]/40 hover:bg-[#8e1c2a]/20 transition-all cursor-default group/skill relative overflow-hidden flex items-center justify-between"
+                                        >
+                                            <span className="text-[10px] font-bold text-white/80 group-hover/skill:text-white transition-colors tracking-widest uppercase font-outfit relative z-10">
+                                                {skill}
+                                            </span>
+                                            <div className="w-1 h-1 rounded-full bg-[#fda4af]/40 group-hover/skill:bg-[#fda4af] transition-colors" />
+
+                                            {/* Sparkle Glint */}
+                                            <motion.div
+                                                animate={{
+                                                    left: ["-100%", "200%"]
+                                                }}
+                                                transition={{
+                                                    duration: 4,
+                                                    repeat: Infinity,
+                                                    ease: "linear",
+                                                    delay: Math.random() * 5
+                                                }}
+                                                className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -skew-x-12 pointer-events-none"
+                                            />
+                                        </motion.div>
+                                    ))}
+                                </div>
+
+                                {/* Floating Monospace Accent */}
+                                <div className="mt-8 text-[9px] font-mono text-[#8e1c2a]/40 tracking-tighter uppercase">
+                                    {`system_arch_${cat.title.toLowerCase().replace(' ', '_')}.sys`}
+                                </div>
+
+                                {/* Animated scanline effect on hover */}
+                                <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/5 to-transparent h-1/2 -translate-y-full group-hover:animate-scanline pointer-events-none" />
                             </div>
                         </motion.div>
                     ))}
                 </div>
-
             </div>
         </section>
     );
 };
+

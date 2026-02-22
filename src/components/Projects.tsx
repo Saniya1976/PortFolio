@@ -3,139 +3,179 @@
 import React from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Github, ExternalLink, ArrowUpRight, Code2, Globe, Layers } from "lucide-react";
-import { cn } from "@/lib/utils";
+import { Github, ExternalLink } from "lucide-react";
+import { Magnetic } from "./Magnetic";
+
+interface Project {
+    title: string;
+    type: string;
+    desc: string;
+    tech: string[];
+    image: string;
+    github: string;
+    live: string;
+    accent: string;
+    size: string;
+}
 
 const projects = [
     {
         title: "Rentora",
-        type: "Real Estate Platform",
-        desc: "A comprehensive property management system featuring automated rent tracking, tenant portals, and property listings. Built with a focus on ease of use and reliability.",
-        tech: ["Next.js 14", "Tailwind CSS", "Clerk", "PostgreSQL", "Prisma"],
+        type: "Real Estate Ecosystem",
+        desc: "A rental platform that streamlines listing, discovery, and booking of properties with secure backend APIs, authentication, and a scalable search feature.",
+        tech: ["Next.js 14", "Clerk Auth", "Redux Toolkit", "PostgreSQL"],
         image: "/projects/rentora.png",
         github: "https://github.com/Saniya1976/rentora",
         live: "#",
-        num: "01",
         accent: "#be185d",
-        icon: <Globe size={28} />
-    },
-    {
-        title: "Nestlly",
-        type: "Community Platform",
-        desc: "A community-driven platform for finding and sharing local gems, housing, and essentials within student neighborhoods.",
-        tech: ["Next.js", "Firebase", "Tailwind"],
-        image: "/projects/nestly.png",
-        github: "https://github.com/Saniya1976/nestly",
-        live: "https://nestly-seven.vercel.app/",
-        num: "02",
-        accent: "#6d0f1b",
-        icon: <Layers size={28} />
+        size: "large" // Bento size
     },
     {
         title: "YapChat",
-        type: "Real-time Messaging App",
-        desc: "A high-concurrency chat application with global room support, private messaging, and rich media sharing. Optimized for low latency and smooth interactions.",
-        tech: ["MERN Stack", "Socket.io", "Cloudinary", "Redux Toolkit"],
+        type: "Real-time Communication",
+        desc: "A real-time language learning chat application with backend event handling and message persistence, enabling secure communication and a scalable search feature.",
+        tech: ["MERN Stack", "MongoDB", "Socket.io", "Streamify", "Cloudinary"],
         image: "/projects/yapchat.png",
         github: "https://github.com/Saniya1976/YapChat",
-        live: "https://yapchat1.vercel.app/",
-        num: "03",
-        accent: "#be185d",
-        icon: <Code2 size={28} />
+        live: "https://yapchat-312l.onrender.com",
+        accent: "#6d0f1b",
+        size: "tall"
     },
+    {
+        title: "Nestly",
+        type: "Hyperlocal Networking",
+        desc: "A social media platform where you can share achievements and engage with posts through likes and comments, featuring AI-generated captions.",
+        tech: ["Next.js", "Cloudinary AI", "Tailwind CSS", "App Router"],
+        image: "/projects/nestly.png",
+        github: "https://github.com/Saniya1976/nestly",
+        live: "https://nestly-seven.vercel.app/",
+        accent: "#fda4af",
+        size: "wide"
+    }
 ];
 
 export const Projects = () => {
     return (
-        <section id="projects" className="py-24 bg-[#0f0a0d] relative overflow-hidden">
+        <section id="projects" className="bg-[#0f0a0d] relative py-20 overflow-hidden">
+            {/* Intensified Burgundy Background System */}
+            <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#8e1c2a]/15 rounded-full blur-[140px] pointer-events-none" />
+            <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#8e1c2a]/10 rounded-full blur-[120px] pointer-events-none" />
 
-            {/* Structural Visuals */}
-            <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#6d0f1b]/5 rounded-full blur-[120px] pointer-events-none" />
-
-            <div className="container mx-auto px-8">
-
-                {/* Header Architecture */}
-                <div className="mb-20">
-                    <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#fda4af] mb-4 block">Selected Work</span>
-                    <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter font-outfit uppercase">Portfolio <span className="text-gradient-rose">Showcase.</span></h2>
-                </div>
-
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {projects.map((project, idx) => (
-                        <motion.div
-                            key={project.title}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ duration: 0.6, delay: idx * 0.1 }}
-                            className="bg-[#1a0f14] rounded-[2rem] border border-white/5 overflow-hidden group hover:border-[#fda4af]/20 hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)] transition-all duration-500"
+            <div className="container mx-auto px-8 mb-16">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+                    <div className="max-w-2xl">
+                        <motion.span
+                            initial={{ opacity: 0, x: -20 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            className="text-[9px] font-black uppercase tracking-[0.5em] text-[#fda4af] mb-4 block"
                         >
-                            {/* Image Area */}
-                            <div className="relative aspect-[16/10] overflow-hidden">
-                                <Image
-                                    src={project.image}
-                                    alt={project.title}
-                                    fill
-                                    className="object-cover opacity-60 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700"
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#1a0f14] via-transparent to-transparent z-10" />
-
-                                <div className="absolute inset-0 z-20 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-500 bg-[#0f0a0d]/40 backdrop-blur-[2px]">
-                                    <div className="flex gap-6">
-                                        <motion.a
-                                            href={project.live}
-                                            target="_blank"
-                                            whileHover={{ scale: 1.1 }}
-                                            className="w-12 h-12 rounded-full bg-gradient-to-r from-[#be185d] to-[#fda4af] flex items-center justify-center shadow-lg"
-                                        >
-                                            <ExternalLink size={20} className="text-white" />
-                                        </motion.a>
-                                        <motion.a
-                                            href={project.github}
-                                            target="_blank"
-                                            whileHover={{ scale: 1.1 }}
-                                            className="w-12 h-12 rounded-full bg-[#1a0f14] border border-white/10 flex items-center justify-center shadow-lg"
-                                        >
-                                            <Github size={20} className="text-white" />
-                                        </motion.a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            {/* Content Area */}
-                            <div className="p-8 space-y-4">
-                                <div className="space-y-2">
-                                    <span className="text-[9px] font-black uppercase tracking-[0.3em] text-[#fda4af]">{project.type}</span>
-                                    <h3 className="text-2xl font-black text-white tracking-tighter uppercase font-outfit">{project.title}</h3>
-                                </div>
-
-                                <p className="text-sm text-[#9ca3af] font-medium leading-relaxed line-clamp-2">
-                                    {project.desc}
-                                </p>
-
-                                <div className="flex flex-wrap gap-2 pt-2">
-                                    {project.tech.map((t) => (
-                                        <span key={t} className="text-[8px] font-black uppercase tracking-[0.2em] text-white/40 py-2 px-4 bg-white/[0.03] border border-white/5 rounded-xl">
-                                            {t}
-                                        </span>
-                                    ))}
-                                </div>
-
-                                <div className="pt-6 border-t border-white/5">
-                                    <a
-                                        href={project.github}
-                                        target="_blank"
-                                        className="inline-flex items-center gap-2 text-[#fda4af] text-[10px] font-black uppercase tracking-[0.2em] hover:text-white transition-all underline decoration-[#fda4af]/30 underline-offset-4"
-                                    >
-                                        View Details <ArrowUpRight size={12} />
-                                    </a>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                            Protocols & Deployments
+                        </motion.span>
+                        <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter font-outfit uppercase mb-6">
+                            Selected <span className="text-gradient-rose">Works.</span>
+                        </h2>
+                        <p className="text-[#9ca3af] text-base md:text-lg font-medium leading-relaxed opacity-80 max-w-xl">
+                            A collection of high-impact digital solutions ranging from real-estate ecosystems to real-time messaging engines. Each project represents a synergy between technical logic and user-centric design.
+                        </p>
+                    </div>
+                    <div className="flex items-center gap-4 text-[9px] font-black uppercase tracking-widest text-white/20">
+                        <span className="w-8 h-[1px] bg-white/10" />
+                        Swipe to Navigate
+                    </div>
                 </div>
+            </div>
 
+            {/* Native Snap Carousel - Perfect for Two-Finger Swipe */}
+            <div className="w-full">
+                <div className="flex overflow-x-auto snap-x snap-mandatory gap-6 px-8 md:px-[10vw] pb-12 no-scrollbar">
+                    {projects.map((project, idx) => (
+                        <div key={project.title} className="snap-center">
+                            <ProjectCard project={project} index={idx} />
+                        </div>
+                    ))}
+                    {/* Spacer for end-padding */}
+                    <div className="flex-shrink-0 w-8 md:w-[10vw]" />
+                </div>
+            </div>
+
+            {/* Unique Industrial Ticker */}
+            <div className="absolute bottom-0 w-full py-4 border-t border-white/5 bg-white/[0.01] backdrop-blur-sm overflow-hidden">
+                <motion.div
+                    animate={{ x: [0, -1000] }}
+                    transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
+                    className="flex gap-20 whitespace-nowrap"
+                >
+                    {[...Array(10)].map((_, i) => (
+                        <div key={i} className="flex items-center gap-4">
+                            <span className="text-[8px] font-black uppercase tracking-[0.4em] text-[#8e1c2a]">System Status: Operational</span>
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#fda4af] animate-pulse" />
+                            <span className="text-[8px] font-black uppercase tracking-[0.4em] text-white/20">Build ID: 2024.0{i + 1}</span>
+                        </div>
+                    ))}
+                </motion.div>
             </div>
         </section>
     );
 };
+
+const ProjectCard = ({ project, index }: { project: Project, index: number }) => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: index * 0.1, duration: 0.8 }}
+            className="relative flex-shrink-0 w-[80vw] md:w-[50vw] aspect-[16/9] rounded-[2rem] overflow-hidden border border-white/5 group bg-[#110a0e] shadow-2xl transition-all duration-700 hover:border-[#8e1c2a]/40"
+        >
+            <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover opacity-30 group-hover:opacity-60 group-hover:scale-105 transition-all duration-1000"
+            />
+
+            {/* Stronger Burgundy Gradient Layer */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0f0a0d] via-[#8e1c2a]/10 to-transparent z-10" />
+
+            <div className="absolute top-6 left-6 z-20">
+                <div className="flex items-center gap-3 py-1.5 px-3 rounded-full bg-white/[0.03] border border-white/10 backdrop-blur-md">
+                    <div className="w-2 h-2 rounded-full bg-[#8e1c2a]" />
+                    <span className="text-[8px] font-black uppercase tracking-widest text-[#9ca3af]">0{index + 1}</span>
+                </div>
+            </div>
+
+            <div className="absolute inset-x-8 bottom-8 z-20 flex flex-col items-start gap-4">
+                <div className="max-w-xl">
+                    <h3 className="text-2xl md:text-3xl font-black text-white tracking-tighter uppercase font-outfit leading-tight mb-2">
+                        {project.title}
+                    </h3>
+                    <p className="text-xs text-[#9ca3af] font-medium leading-relaxed mb-6 opacity-80 line-clamp-2">
+                        {project.desc}
+                    </p>
+
+                    <div className="flex flex-wrap gap-2 mb-6">
+                        {project.tech.map((t: string) => (
+                            <span key={t} className="text-[7px] font-black uppercase tracking-widest text-white/50 py-1.5 px-3 bg-white/[0.03] border border-white/5 rounded-full">
+                                {t}
+                            </span>
+                        ))}
+                    </div>
+
+                    <div className="flex items-center gap-6 pt-4 border-t border-white/5 w-full">
+                        <Magnetic>
+                            <a href={project.live} className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-widest text-white hover:text-[#fda4af] transition-colors">
+                                Launch <ExternalLink size={12} />
+                            </a>
+                        </Magnetic>
+                        <Magnetic>
+                            <a href={project.github} className="flex items-center gap-1.5 text-[9px] font-black uppercase tracking-widest text-white/40 hover:text-white transition-colors">
+                                <Github size={12} /> Source
+                            </a>
+                        </Magnetic>
+                    </div>
+                </div>
+            </div>
+        </motion.div>
+    );
+};
+

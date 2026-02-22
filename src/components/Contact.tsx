@@ -2,115 +2,135 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { MapPin, Mail, Linkedin, Send, MessageSquare } from "lucide-react";
+import { MapPin, Mail, Linkedin, Twitter, ExternalLink, Code2, Trophy } from "lucide-react";
 
 export const Contact = () => {
+    const socials = [
+        {
+            icon: <Mail size={24} />,
+            label: "Email",
+            val: "saniyakumari1976@gmail.com",
+            href: "mailto:saniyakumari1976@gmail.com",
+            desc: "Direct Professional Inquiry"
+        },
+        {
+            icon: <Linkedin size={24} />,
+            label: "LinkedIn",
+            val: "Saniya Kumari",
+            href: "https://www.linkedin.com/in/saniya-9287592a8",
+            desc: "Career & Network"
+        },
+        {
+            icon: <Twitter size={24} />,
+            label: "Twitter/X",
+            val: "0x_Saniyaa_",
+            href: "https://x.com/0x_Saniyaa_",
+            desc: "Tech Thoughts & Updates"
+        },
+        {
+            icon: <Code2 size={24} />,
+            label: "LeetCode",
+            val: "Saniya0nLC",
+            href: "https://leetcode.com/u/Saniya0nLC/",
+            desc: "300+ Problems Solved"
+        },
+        {
+            icon: <Trophy size={24} />,
+            label: "GeeksforGeeks",
+            val: "saniya1976",
+            href: "https://www.geeksforgeeks.org/user/saniyakumari1976/",
+            desc: "Data Structures & Algorithms"
+        },
+    ];
+
     return (
-        <section id="contact" className="py-24 bg-[#0f0a0d] relative overflow-hidden">
+        <section id="contact" className="py-24 bg-[#0d0406] relative overflow-hidden bg-grid">
 
             {/* Structural Visual System */}
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-            <div className="absolute bottom-[-10%] left-[-5%] w-[400px] h-[400px] bg-[#6d0f1b]/10 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute bottom-[-10%] left-[-5%] w-[600px] h-[600px] bg-[#8e1c2a]/10 rounded-full blur-[140px] pointer-events-none" />
 
             <div className="container mx-auto px-8 relative z-10">
-                <div className="max-w-[1400px] mx-auto">
-
-                    <div className="grid lg:grid-cols-12 gap-16 items-center">
-
-                        {/* Branding & Interaction Info */}
-                        <motion.div
-                            initial={{ opacity: 0, x: -30 }}
-                            whileInView={{ opacity: 1, x: 0 }}
-                            viewport={{ once: true }}
-                            className="lg:col-span-5 space-y-12"
+                <div className="max-w-6xl mx-auto">
+                    <div className="text-center mb-20">
+                        <motion.span
+                            initial={{ opacity: 0, y: 10 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            className="text-[10px] font-black uppercase tracking-[0.5em] text-[#8e1c2a] mb-6 block"
                         >
-                            <div>
-                                <span className="text-[10px] font-black uppercase tracking-[0.5em] text-[#fda4af] mb-6 block">Inquiries</span>
-                                <h2 className="text-4xl md:text-6xl font-black text-white tracking-tighter mb-8 font-outfit uppercase">
-                                    Let&apos;s <span className="text-gradient-rose">Connect.</span>
-                                </h2>
-                                <p className="text-lg text-[#9ca3af] font-medium leading-relaxed opacity-70 max-w-md">
-                                    I am currently open to full-time roles, internships, and project collaborations. Feel free to reach out for a technical discussion or just to say hi.
-                                </p>
-                            </div>
-
-                            <div className="space-y-12">
-                                {[
-                                    { icon: <Mail size={24} />, label: "Email Address", val: "saniyakumari1976@gmail.com", href: "mailto:saniyakumari1976@gmail.com", color: "text-[#fda4af]" },
-                                    { icon: <Linkedin size={24} />, label: "LinkedIn Profile", val: "Saniya Kumari", href: "https://www.linkedin.com/in/saniya-9287592a8", color: "text-[#fda4af]" },
-                                ].map((item, i) => (
-                                    <motion.a
-                                        key={i}
-                                        href={item.href}
-                                        target="_blank"
-                                        className="flex items-center gap-8 group no-underline"
-                                    >
-                                        <div className="w-16 h-16 rounded-[2rem] bg-[#1a0f14] border border-white/5 flex items-center justify-center text-white/40 group-hover:bg-[#fda4af] group-hover:text-white transition-all duration-500 shadow-xl">
-                                            {item.icon}
-                                        </div>
-                                        <div>
-                                            <p className="text-[10px] font-black uppercase tracking-widest text-[#fda4af]/60 mb-1">{item.label}</p>
-                                            <span className="text-2xl font-black text-white tracking-tighter transition-colors group-hover:text-[#fda4af]">{item.val}</span>
-                                        </div>
-                                    </motion.a>
-                                ))}
-
-                                <div className="flex items-center gap-6 pt-8 border-t border-white/5 w-fit">
-                                    <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] text-[#9ca3af]">
-                                        <MapPin size={14} className="text-[#fda4af]" /> New Delhi, India
-                                    </div>
-                                    <div className="w-2 h-2 rounded-full bg-[#fda4af] animate-pulse" />
-                                    <span className="text-[10px] font-black uppercase tracking-[0.3em] text-white">GMT +5:30</span>
-                                </div>
-                            </div>
-                        </motion.div>
-
-                        {/* Contact Form */}
-                        <motion.div
-                            initial={{ opacity: 0, scale: 0.95 }}
-                            whileInView={{ opacity: 1, scale: 1 }}
-                            viewport={{ once: true }}
-                            className="lg:col-span-6 bg-[#1a0f14] p-8 md:p-12 rounded-[2.5rem] border border-white/5 relative group shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
+                            Get In Touch
+                        </motion.span>
+                        <motion.h2
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            className="text-5xl md:text-7xl font-black text-white tracking-tighter mb-8 font-outfit uppercase"
                         >
-                            <div className="absolute top-[-30px] right-[30px] w-14 h-14 rounded-2xl bg-gradient-to-br from-[#be185d] to-[#fda4af] flex items-center justify-center text-white shadow-xl">
-                                <MessageSquare size={24} />
-                            </div>
+                            Drop me a <span className="text-gradient-rose italic">Hello.</span>
+                        </motion.h2>
+                        <motion.p
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            className="text-lg text-[#9ca3af] font-medium leading-relaxed opacity-70 max-w-2xl mx-auto"
+                        >
+                            Currently open to new opportunities and technical collaborations.
+                            Connect with me across these platforms for a discussion.
+                        </motion.p>
+                    </div>
 
-                            <form className="space-y-8 relative z-10">
-                                <div className="grid md:grid-cols-2 gap-8">
-                                    <div className="space-y-3">
-                                        <label className="text-[9px] font-black uppercase tracking-[0.3em] text-[#fda4af] ml-2">Name</label>
-                                        <input
-                                            type="text"
-                                            placeholder="Your Name"
-                                            className="w-full bg-[#0f0a0d] border border-white/5 px-6 py-4 rounded-2xl text-white text-[11px] font-bold tracking-widest uppercase outline-none focus:border-[#fda4af]/50 focus:shadow-[0_0_20px_rgba(251,113,133,0.1)] transition-all"
-                                        />
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+                        {socials.map((item, i) => (
+                            <motion.a
+                                key={i}
+                                href={item.href}
+                                target="_blank"
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
+                                transition={{ delay: i * 0.1 }}
+                                className="group relative block p-6 bg-[#0a0405] border border-white/5 rounded-2xl overflow-hidden transition-all duration-500 hover:border-white/20 hover:translate-y-[-5px] shadow-2xl"
+                            >
+                                {/* Shiny Burgundy Background Overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-[#b91c1c] via-[#8e1c2a] to-[#450a0a] opacity-0 group-hover:opacity-100 transition-all duration-500" />
+
+                                {/* Moving Sparkle Glint */}
+                                <motion.div
+                                    animate={{
+                                        left: ["-100%", "200%"]
+                                    }}
+                                    transition={{
+                                        duration: 3,
+                                        repeat: Infinity,
+                                        ease: "linear",
+                                        delay: Math.random() * 3
+                                    }}
+                                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -skew-x-12 pointer-events-none z-20 opacity-0 group-hover:opacity-100 transition-opacity"
+                                />
+
+                                <div className="relative z-10 flex flex-col items-center text-center">
+                                    <div className="w-12 h-12 rounded-xl bg-[#0d0406] border border-[#8e1c2a]/20 flex items-center justify-center text-[#8e1c2a] mb-5 group-hover:bg-white/10 group-hover:text-white group-hover:border-white/30 transition-all duration-500 shadow-lg">
+                                        {React.cloneElement(item.icon as React.ReactElement, { size: 20 })}
                                     </div>
-                                    <div className="space-y-3">
-                                        <label className="text-[9px] font-black uppercase tracking-[0.3em] text-[#fda4af] ml-2">Email</label>
-                                        <input
-                                            type="email"
-                                            placeholder="your@email.com"
-                                            className="w-full bg-[#0f0a0d] border border-white/5 px-6 py-4 rounded-2xl text-white text-[11px] font-bold tracking-widest uppercase outline-none focus:border-[#fda4af]/50 focus:shadow-[0_0_20px_rgba(251,113,133,0.1)] transition-all"
-                                        />
+
+                                    <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#8e1c2a] mb-1 group-hover:text-white/80 transition-colors uppercase">PROFILES</p>
+                                    <h3 className="text-lg font-black text-white tracking-widest transition-colors line-clamp-1 group-hover:text-white drop-shadow-sm uppercase font-outfit italic">{item.label}</h3>
+
+                                    <div className="pt-4 border-t border-white/5 w-full flex items-center justify-center gap-2 text-[8px] font-black uppercase tracking-widest text-white/20 group-hover:text-white group-hover:border-white/20 transition-colors">
+                                        DIRECTORY <ExternalLink size={10} />
                                     </div>
                                 </div>
 
-                                <div className="space-y-3">
-                                    <label className="text-[9px] font-black uppercase tracking-[0.3em] text-[#fda4af] ml-2">Message</label>
-                                    <textarea
-                                        rows={4}
-                                        placeholder="How can I help you?"
-                                        className="w-full bg-[#0f0a0d] border border-white/5 px-6 py-5 rounded-[1.5rem] text-white text-[11px] font-bold tracking-widest uppercase outline-none focus:border-[#fda4af]/50 focus:shadow-[0_0_20px_rgba(251,113,133,0.1)] transition-all resize-none"
-                                    />
-                                </div>
+                                {/* Background Glow Layer */}
+                                <div className="absolute inset-0 bg-[#8e1c2a]/20 blur-xl opacity-0 group-hover:opacity-100 transition-opacity -z-10" />
+                            </motion.a>
+                        ))}
+                    </div>
 
-                                <button className="btn-burgundy w-full py-5 text-[10px] flex items-center justify-center gap-4 group hover:-translate-y-1 bg-gradient-to-r from-[#be185d] to-[#fda4af]">
-                                    Send Message <Send size={16} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-                                </button>
-                            </form>
-                        </motion.div>
-
+                    <div className="mt-20 pt-8 border-t border-white/5 flex flex-wrap items-center justify-center gap-12 opacity-50">
+                        <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] text-[#9ca3af]">
+                            <MapPin size={14} className="text-[#8e1c2a]" /> New Delhi, India
+                        </div>
+                        <div className="flex items-center gap-3 text-[10px] font-black uppercase tracking-[0.3em] text-[#9ca3af]">
+                            <span className="w-2 h-2 rounded-full bg-[#8e1c2a] animate-pulse" /> GMT +5:30
+                        </div>
                     </div>
                 </div>
             </div>
