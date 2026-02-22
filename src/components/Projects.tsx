@@ -56,7 +56,7 @@ const projects = [
 
 export const Projects = () => {
     return (
-        <section id="projects" className="bg-[#0f0a0d] relative py-20 overflow-hidden">
+        <section id="projects" className="bg-transparent relative py-20 overflow-hidden">
             {/* Intensified Burgundy Background System */}
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#8e1c2a]/15 rounded-full blur-[140px] pointer-events-none" />
             <div className="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-[#8e1c2a]/10 rounded-full blur-[120px] pointer-events-none" />

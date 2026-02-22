@@ -8,7 +8,7 @@ import { TiltCard } from "./TiltCard";
 
 export const About = () => {
     return (
-        <section id="about" className="py-12 bg-[#0d0406] relative overflow-hidden bg-grid">
+        <section id="about" className="py-12 bg-transparent relative overflow-hidden ">
 
             <div className="container mx-auto px-8 relative z-10">
                 <div className="max-w-6xl mx-auto">
@@ -19,7 +19,7 @@ export const About = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="lg:col-span-7 bg-[#1a080a]/50 backdrop-blur-sm p-8 md:p-10 rounded-[2rem] border border-[#8e1c2a]/50 relative flex flex-col justify-center shadow-[0_0_15px_rgba(142,28,42,0.1)] hover:border-[#8e1c2a]/80 transition-colors duration-500"
+                            className="lg:col-span-7 bg-white/5 backdrop-blur-sm p-8 md:p-10 rounded-[2rem] border border-[#8e1c2a]/50 relative flex flex-col justify-center shadow-[0_0_15px_rgba(142,28,42,0.1)] hover:border-[#8e1c2a]/80 transition-colors duration-500"
                         >
                             <span className="text-[9px] font-black uppercase tracking-[0.4em] text-[#8e1c2a] mb-4 block">Background</span>
                             <h2 className="text-3xl md:text-4xl font-black text-white tracking-tighter mb-6 font-outfit uppercase leading-none">
@@ -52,7 +52,7 @@ export const About = () => {
                                         whileInView={{ opacity: 1, scale: 1 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: i * 0.1 }}
-                                        className="h-full p-6 bg-[#1a080a]/50 backdrop-blur-sm rounded-[1.5rem] border border-[#8e1c2a]/50 group hover:border-[#8e1c2a] transition-all text-center flex flex-col items-center justify-center gap-3 shadow-lg hover:shadow-[#8e1c2a]/10"
+                                        className="h-full p-6 bg-white/5 backdrop-blur-sm rounded-[1.5rem] border border-[#8e1c2a]/50 group hover:border-[#8e1c2a] transition-all text-center flex flex-col items-center justify-center gap-3 shadow-lg hover:shadow-[#8e1c2a]/10"
                                     >
                                         <div className="text-[#8e1c2a] opacity-90 group-hover:opacity-100 transition-opacity">
                                             {stat.icon}

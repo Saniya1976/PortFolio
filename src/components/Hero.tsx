@@ -43,12 +43,12 @@ export const Hero = () => {
             id="home"
             onMouseMove={handleMouseMove}
             onMouseLeave={handleMouseLeave}
-            className="relative min-h-[110vh] flex items-center justify-center pt-24 pb-12 overflow-hidden mesh-gradient bg-grid cursor-default"
+            className="relative min-h-[110vh] flex items-center justify-center pt-24 pb-12 overflow-hidden   cursor-default"
         >
 
             {/* Ambient Background Elements - Dramatically Intensified */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div className="absolute inset-0 bg-grid opacity-20 [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]" />
+                <div className="absolute inset-0  opacity-20 [mask-image:radial-gradient(ellipse_at_center,black,transparent_80%)]" />
 
                 {/* Random Sparkly Dots */}
                 {[...Array(20)].map((_, i) => (

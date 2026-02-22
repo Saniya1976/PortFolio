@@ -41,7 +41,7 @@ const milestones = [
 
 export const Experience = () => {
     return (
-        <section id="experience" className="py-24 bg-[#0d0406] relative overflow-hidden bg-grid">
+        <section id="experience" className="py-24 bg-transparent relative overflow-hidden ">
 
             {/* Structural Decoration */}
             <div className="absolute top-[20%] left-[-10%] w-[600px] h-[600px] bg-[#8e1c2a]/10 rounded-full blur-[120px] pointer-events-none" />
@@ -85,7 +85,7 @@ export const Experience = () => {
                 <div className="max-w-5xl mx-auto relative mt-8">
 
                     {/* Vertical Architectural Line */}
-                    <div className="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-[#4a0404] via-[#6d0f1b] to-[#8e1c2a] opacity-50" />
+                    <div className="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-[#4a0404] via-[#6d0f1b] to-[#8e1c2a] opacity-70" />
 
                     <div className="space-y-12">
                         {milestones.map((item, idx) => (
@@ -99,12 +99,12 @@ export const Experience = () => {
                             >
 
                                 {/* Visual Anchor (The Central Dot System) */}
-                                <div className="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-0 w-10 h-10 rounded-2xl bg-[#0d0406] border border-[#8e1c2a]/20 flex items-center justify-center z-10 transition-all duration-500 group-hover:scale-125 group-hover:bg-[#8e1c2a] group-hover:border-[#8e1c2a] group-hover:shadow-[0_0_30px_rgba(142,28,42,0.3)]">
+                                <div className="absolute left-[20px] md:left-1/2 md:-translate-x-1/2 top-0 w-10 h-10 rounded-2xl bg-transparent border border-[#8e1c2a]/20 flex items-center justify-center z-10 transition-all duration-500 group-hover:scale-125 group-hover:bg-[#8e1c2a] group-hover:border-[#8e1c2a] group-hover:shadow-[0_0_30px_rgba(142,28,42,0.3)]">
                                     <div className="w-2 h-2 rounded-full bg-[#be185d] group-hover:bg-white transition-colors" />
                                 </div>
 
                                 {/* Information Component */}
-                                <div className={`w-full md:w-[42%] p-8 bg-[#1a080a]/60 backdrop-blur-md border border-white/5 rounded-3xl relative overflow-hidden transition-all duration-700 hover:border-[#8e1c2a]/30 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)] ${idx % 2 === 0 ? "text-left" : "md:text-right"}`}>
+                                <div className={`w-full md:w-[42%] p-8 bg-white/5 backdrop-blur-md border border-white/5 rounded-3xl relative overflow-hidden transition-all duration-700 hover:border-[#8e1c2a]/30 hover:shadow-[0_15px_30px_rgba(0,0,0,0.4)] ${idx % 2 === 0 ? "text-left" : "md:text-right"}`}>
 
                                     {/* Ghost Background Icon */}
                                     <div className={`absolute top-0 opacity-5 group-hover:opacity-10 transition-all duration-700 scale-[2] ${idx % 2 === 0 ? "right-0" : "left-0"}`}>

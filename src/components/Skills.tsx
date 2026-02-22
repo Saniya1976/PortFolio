@@ -39,7 +39,7 @@ const skillCategories = [
 
 export const Skills = () => {
     return (
-        <section id="skills" className="py-24 bg-[#0d0406] relative overflow-hidden bg-grid">
+        <section id="skills" className="py-24 bg-transparent relative overflow-hidden ">
             {/* Ambient Background Elements */}
             <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-[#8e1c2a]/5 rounded-full blur-[150px] pointer-events-none" />
             <div className="absolute bottom-[-10%] left-[-5%] w-[500px] h-[500px] bg-[#4a0404]/5 rounded-full blur-[120px] pointer-events-none" />
@@ -79,11 +79,11 @@ export const Skills = () => {
                             {/* Glowing Background/Border Effect */}
                             <div className="absolute -inset-[1px] bg-gradient-to-b from-[#8e1c2a]/50 via-transparent to-[#fda4af]/30 rounded-[2rem] opacity-50 group-hover:opacity-100 transition-opacity duration-500 blur-[1px]" />
 
-                            <div className="relative h-full p-8 rounded-[2rem] bg-[#1a080a]/40 backdrop-blur-xl border border-white/5 overflow-hidden flex flex-col">
+                            <div className="relative h-full p-8 rounded-[2rem] bg-white/5 backdrop-blur-xl border border-white/5 overflow-hidden flex flex-col">
                                 {/* Header */}
                                 <div className="flex items-center gap-4 mb-8">
                                     <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${cat.color} p-px`}>
-                                        <div className="w-full h-full rounded-2xl bg-[#0d0406] flex items-center justify-center text-white">
+                                        <div className="w-full h-full rounded-2xl bg-transparent flex items-center justify-center text-white">
                                             {cat.icon}
                                         </div>
                                     </div>

@@ -14,13 +14,17 @@
 
 @layer base {
   body {
-    background-color: #1a080a;
+    background-color: #0d0406;
     color: #ffffff;
     @apply antialiased selection:bg-[#8e1c2a] selection:text-white;
     font-size: 14px;
     scroll-behavior: smooth;
     overflow-x: hidden;
     position: relative;
+    background-image: url('/bg-texture.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
   }
 
   body::before {
@@ -31,7 +35,7 @@
     width: 100%;
     height: 100%;
     background-image: url("https://grainy-gradients.vercel.app/noise.svg");
-    opacity: 0.04;
+    opacity: 0.02;
     pointer-events: none;
     z-index: 9999;
   }

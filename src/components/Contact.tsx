@@ -44,7 +44,7 @@ export const Contact = () => {
     ];
 
     return (
-        <section id="contact" className="py-24 bg-[#0d0406] relative overflow-hidden bg-grid">
+        <section id="contact" className="py-24 bg-transparent relative overflow-hidden ">
 
             {/* Structural Visual System */}
             <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
@@ -106,7 +106,7 @@ export const Contact = () => {
                                 />
 
                                 <div className="relative z-10 flex flex-col items-center text-center">
-                                    <div className="w-12 h-12 rounded-xl bg-[#0d0406] border border-[#8e1c2a]/20 flex items-center justify-center text-[#8e1c2a] mb-5 group-hover:bg-white/10 group-hover:text-white group-hover:border-white/30 transition-all duration-500 shadow-lg">
+                                    <div className="w-12 h-12 rounded-xl bg-transparent border border-[#8e1c2a]/20 flex items-center justify-center text-[#8e1c2a] mb-5 group-hover:bg-white/10 group-hover:text-white group-hover:border-white/30 transition-all duration-500 shadow-lg">
                                         {React.cloneElement(item.icon as React.ReactElement, { size: 20 })}
                                     </div>
 
