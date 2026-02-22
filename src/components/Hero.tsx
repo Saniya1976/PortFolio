@@ -120,7 +120,7 @@ export const Hero = () => {
                             transition={{ delay: 1, duration: 0.8 }}
                             className="max-w-2xl text-[#d1d5db] text-xl md:text-2xl font-medium leading-relaxed mb-16 opacity-90 [transform:translateZ(50px)]"
                         >
-                            Full Stack Developer specializing in <span className="text-[#8e1c2a] font-bold">high-performance MERN & Next.js applications</span>. I turn complex problems into <span className="text-[#e14d85] font-bold">fluid, user-centric digital solutions.</span>
+                            Full Stack Developer specializing in <span className="text-[#AC2B3C] font-bold">high-performance MERN & Next.js applications</span>. I turn complex problems into <span className="text-[#e14d85] font-bold">fluid, user-centric digital solutions.</span>
                         </motion.p>
 
                         <div className="flex flex-wrap items-center justify-center gap-8 [transform:translateZ(75px)]">
